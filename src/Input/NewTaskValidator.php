@@ -28,10 +28,7 @@ class NewTaskValidator
             $result = false;
         }
         
-        if ($image === false) {
-            $errors[] = 'ошибка ';
-            $result = false;
-        }
+      
         //if there are no errors
         if ($result !== false) {
             $result = ['email' => $email, 'task_text' => $taskText];
@@ -69,18 +66,7 @@ class NewTaskValidator
         return $result;
     }
     
-    /**
-     * Checks input to be string, optionally to consist of letters, numbers and '_' sign.
-     * @param string $string String to check
-     * @param int $minlen Minimal permitted length of string to pass check.
-     * @param int $maxlen Maximal permitted length of string to pass check.
-     * @param bool $trimWhiteSpaces
-     * @param bool $onlyLetters
-     * @param bool $startsWithLetter Optional parameter is used,
-     * when first meaningful symbol of string (except any white character) must be letter.
-     * @return bool|string Returns string if it passes test, else FALSE
-     * (be careful, any whitespace character in the begginning and the end are deleted).
-     */
+ 
     private static function checkString(
         $string,
         $minlen,
