@@ -152,7 +152,7 @@ class TaskMapper
     function changeStatus($taskID, $fulfilled)
     {
         try {
-            $sql = 'UPDATE `beejee_tasks` SET `fulfilled` = :status WHERE `id` = :id';
+            $sql = 'UPDATE `exercice` SET `fulfilled` = :status WHERE `id` = :id';
             $stmt = $this->pdo->prepare($sql);
             $stmt->bindParam(':id', $taskID, \PDO::PARAM_INT);
             $status = (int)$fulfilled;
